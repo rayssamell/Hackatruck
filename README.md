@@ -1,5 +1,5 @@
 # 📚 Repositório do Hackatruck
-
+---
 Bem-vindo(a) ao repositório do **hackatruck**! Este espaço reúne os desafios desenvolvidos durante minha participação na estapa presencial do hackatruck.
 ---
 

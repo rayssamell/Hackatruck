@@ -4,7 +4,7 @@ Bem-vindo(a) ao repositório do **hackatruck**! Este espaço reúne os desafios 
 ---
 
 ## 🏫 Sobre
-Este repositório foi criado para armazenar e organizar os desafios desenvolvidas ao longo da minha jornada no hackatruck. Os desafios são realizados na linguagem swift.
+Este repositório foi criado para armazenar e organizar os desafios desenvolvidas ao longo da minha jornada no hackatruck. Os desafios são realizados na linguagem *Swift*.
 
 
 **Curso:** *Ciência da Computação*  
@@ -12,11 +12,3 @@ Este repositório foi criado para armazenar e organizar os desafios desenvolvida
 **Semestre Atual:** *3°*  
 
 ---
-
----
-## 📁 Linguagens
-* Java
-* C
-  
-```
-Nota: Este repositório é apenas para fins educativos e para acompanhar minha evolução no curso. 😊

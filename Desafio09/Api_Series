@@ -1,0 +1,66 @@
+[
+    {
+        "nome": "The Vampire Diaries",
+        "anoLancamento": 2009,
+        "quantTemporadas": 8,
+        "emissora": "The CW Television Network",
+        "adaptacao": true,
+        "atores_principais": [
+            "Elena Gilbert",
+            "Damon Salvatore",
+            "Stefan Salvatore",
+            "Bonnie Benett",
+            "Caroline Forbes"
+        ],
+        "image": "https://ntvb.tmsimg.com/assets/p10700229_b_h10_aa.jpg?w=960&h=540"
+    },
+    {
+        "nome": "Friends",
+        "anoLancamento": 1994,
+        "quantTemporadas": 10,
+        "emissora": "NBC",
+        "adaptacao": false,
+        "atores_principais": [
+            "Monica Geller",
+            "Ross Geller",
+            "Phoebe Buffay",
+            "Chandler Bing",
+            "Rachel Green",
+            "Joey Tribbiani"
+        ],
+        "image": "https://veja.abril.com.br/wp-content/uploads/2022/07/warner-bros-friends-1.jpg?quality=70&strip=info&w=1280&h=720&crop=1"
+    },
+    {
+        "nome": "Brooklyn Nine-Nine",
+        "anoLancamento": 2013,
+        "quantTemporadas": 8,
+        "emissora": "Fox / NBC",
+        "adaptacao": false,
+        "atores_principais": [
+            "Jake Peralta",
+            "Amy Santiago",
+            "Raymond Holt",
+            "Rosa Diaz",
+            "Terry Jeffords",
+            "Charles Boyle",
+            "Gina Linetti"
+        ],
+        "image": "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*ELn2VylIgfDTb396AVS2FA.jpeg"
+    },
+    {
+        "nome": "The Office (US)",
+        "anoLancamento": 2005,
+        "quantTemporadas": 9,
+        "emissora": "NBC",
+        "adaptacao": true,
+        "atores_principais": [
+            "Michael Scott",
+            "Pam Beasly",
+            "Jim Halpert",
+            "Dwight Shrute",
+            "Andy Bernars"
+        ],
+        "image": "https://idris.com.br/dev/wp-content/uploads/2020/09/images-9.jpeg"
+    }
+]
+

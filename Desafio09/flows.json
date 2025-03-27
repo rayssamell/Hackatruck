@@ -1,0 +1,129 @@
+[
+    {
+        "id": "bb2d29ac5a079fdc",
+        "type": "tab",
+        "label": "Flow 5",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "2db310292ccb4f38",
+        "type": "cloudantplus out",
+        "z": "bb2d29ac5a079fdc",
+        "name": "",
+        "cloudant": "fa77e47f0c84703f",
+        "database": "d09",
+        "service": "_ext_",
+        "payonly": true,
+        "operation": "insert",
+        "x": 450,
+        "y": 60,
+        "wires": [
+            [
+                "3c0d5302bb2feb24"
+            ]
+        ]
+    },
+    {
+        "id": "ca08419a6de86a06",
+        "type": "http in",
+        "z": "bb2d29ac5a079fdc",
+        "name": "",
+        "url": "/PostSerie",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 80,
+        "y": 60,
+        "wires": [
+            [
+                "aa36e0e861b84b67"
+            ]
+        ]
+    },
+    {
+        "id": "3c0d5302bb2feb24",
+        "type": "http response",
+        "z": "bb2d29ac5a079fdc",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 630,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "27c7e0a08b373bd5",
+        "type": "http response",
+        "z": "bb2d29ac5a079fdc",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 630,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "a1a4326bed1532df",
+        "type": "cloudantplus in",
+        "z": "bb2d29ac5a079fdc",
+        "name": "",
+        "cloudant": "fa77e47f0c84703f",
+        "database": "d09",
+        "service": "_ext_",
+        "search": "_all_",
+        "design": "",
+        "index": "",
+        "x": 450,
+        "y": 160,
+        "wires": [
+            [
+                "27c7e0a08b373bd5"
+            ]
+        ]
+    },
+    {
+        "id": "aa36e0e861b84b67",
+        "type": "split",
+        "z": "bb2d29ac5a079fdc",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 270,
+        "y": 60,
+        "wires": [
+            [
+                "2db310292ccb4f38"
+            ]
+        ]
+    },
+    {
+        "id": "549a04b4751da33f",
+        "type": "http in",
+        "z": "bb2d29ac5a079fdc",
+        "name": "",
+        "url": "/GetSerie",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 70,
+        "y": 160,
+        "wires": [
+            [
+                "a1a4326bed1532df"
+            ]
+        ]
+    },
+    {
+        "id": "fa77e47f0c84703f",
+        "type": "cloudantplus",
+        "host": "https://f1c0dcf9-5075-4061-a1f8-2f4ca596058a-bluemix.cloudantnosqldb.appdomain.cloud",
+        "name": "RayssaMell",
+        "useapikey": true
+    }
+]

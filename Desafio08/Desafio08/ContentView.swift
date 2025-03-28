@@ -55,8 +55,9 @@ struct ContentView: View {
             .onAppear() {
                 viewModel.fetch()
             }
+            .ignoresSafeArea()
         }
-        .ignoresSafeArea()
+       
     }
 }
 

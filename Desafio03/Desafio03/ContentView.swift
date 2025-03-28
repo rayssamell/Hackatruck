@@ -137,8 +137,9 @@ struct ContentView: View {
                         Circle().foregroundColor(Color.lightorange)
                         Circle().foregroundColor(Color.lightyellow)
                         Circle().foregroundColor(Color.lightred)
-                    }.frame(width: 15)
+                    }
                 }
+                .frame(width: 300, height: 120)
                 .background(Color.black)
                 .cornerRadius(10)
                 .padding(.horizontal, 10)
@@ -146,7 +147,7 @@ struct ContentView: View {
                 Spacer()
             }
         }
-
+        
     }
 }
 

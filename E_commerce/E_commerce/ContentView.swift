@@ -13,7 +13,9 @@ struct ContentView: View {
     @State var scrollPosition: Int?
     private let pageWidth: CGFloat = 250
     private let pageHeight: CGFloat = 350
-    @State var categoria: [String] = ["Iluminação", "Cama, Mesa e Banho", "Acessórios", "Calças", "Vestido", "Beleza"]
+    @State var categoria: [String] = ["Todas", "Iluminação", "Cama, Mesa e Banho", "Acessórios", "Calças", "Vestido", "Beleza"]
+    @State var categoriaSelecionada: String = "Todas"
+    
     
     var body: some View {
         NavigationStack{
@@ -34,18 +36,12 @@ struct ContentView: View {
                     Spacer()
                     
                     
-                    Picker("Categoria", selection:$viewModel.produtos) {
-                        
+                    Picker("Categoria", selection:$categoriaSelecionada){
                         ForEach(categoria, id: \.self) { index in
-                            
                             Text(index)
-                            
                         }
                         
-                        
-                        
                     }
-                    
                     .tint(.white)
                     .bold()
                     .clipShape(Rectangle())
@@ -53,36 +49,41 @@ struct ContentView: View {
                     .onAppear() {
                         viewModel.fetch()
                     }
-                    
+                    .onChange(of: categoriaSelecionada){
+                        
+                    }
+
                     
                     ScrollView(.vertical) {
                         VStack{
                             LazyVGrid(columns: Array(repeating: GridItem(spacing:.zero), count: 2), spacing: .zero){
                                 ForEach(viewModel.produtos, id: \.self){ produto in
-                                    NavigationLink(destination: ContentView()){
-                                        VStack{
-                                            
-                                            AsyncImage(url: URL(string: produto.image!)) { image in
-                                                image.resizable()
-                                            } placeholder: {
-                                                Color.red
+                                    
+                                    if produto.categoria == categoriaSelecionada || categoriaSelecionada == "Todas" {
+                                      
+                                            VStack{
+                                                NavigationLink(destination: Page(p: produto)){
+                                                    AsyncImage(url: URL(string: produto.image!)) { image in
+                                                        image.resizable()
+                                                    } placeholder: {
+                                                        Color.red
+                                                    }
+                                                    .frame(width: 140, height: 140)
+                                                    .clipShape(Rectangle())
+                                                }
+                                                
+                                                VStack(alignment:.leading){
+                                                    Text(produto.nome!)
+                                                    Text("R$ \(produto.preco!, specifier: "%.2f")")
+                                                        .foregroundStyle(.orange)
+                                                }
+                                                .foregroundStyle(.white)
+                                                .font(.subheadline)
+                                                .bold()
                                             }
-                                            .frame(width: 140, height: 140)
-                                            .clipShape(Rectangle())
                                             
-                                            
-                                            VStack(alignment:.leading){
-                                                Text(produto.nome!)
-                                                Text("R$ \(produto.preco!)")
-                                                    .foregroundStyle(.orange)
-                                            }
-                                            .foregroundStyle(.white)
-                                            .font(.subheadline)
-                                            .bold()
-                                        }
-                                        
+                                        .padding()
                                     }
-                                    .padding()
                                 }
                             }
                         }

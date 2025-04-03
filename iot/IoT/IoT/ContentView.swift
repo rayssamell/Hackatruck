@@ -11,47 +11,44 @@ import Charts
 
 struct ContentView: View {
     @StateObject var viewModel = ViewModel()
-    //    @State var recebeS : String = ""
-    //    @State var recebeS : Date?
-    @State var testar = [1,2,3,4]
     var body: some View {
-        VStack(alignment: .leading) {
-            Text("Line Chart")
+        VStack {
+            Text("Sensor de Umidade")
                 .font(.system(size: 16, weight: .medium))
             
-            Chart{
-                ForEach(viewModel.sensor.sorted { ($0.umidade) > ($1.umidade) }, id: \.self) { s in
-           
-                        
-                        //                    let currentDate = TimeInterval(s.data!) / 1000
-                        //                    let date = Date(timeIntervalSince1970: currentDate)
-                        //                    LineMark(x: .value("Hora:", s.data!),
-                        //                             y: .value("Umidade:", s.umidade!))
-                    LineMark(x: .value("Hora:", s.data),
+            Chart {
+                ForEach(viewModel.sensor.sorted { ($0.data) > ($1.data) }, id: \.self) { s in
+                    LineMark(x: .value("Hora:", formatDate(s.data)),
                                  y: .value("Umidade:", s.umidade))
-                        
-                        // .foregroundStyle(by: .value(s.umidade, <#_#>))
-                    .annotation(position: .trailing) {
-                            Text(String(s.umidade))
-                                .foregroundColor(.gray)
-                        }
-                    
-                    
                     
                 }
+                .lineStyle(.init(lineWidth: 2))
+                    .symbol(Circle().strokeBorder(lineWidth: 2))
+                    .foregroundStyle(.blue)
             }
-            //            .chartXScale(domain: 1730000000000...1744000000000)
-            //            .aspectRatio(1, contentMode: .fit)
-            //            .padding()
-            //.chartLegend(.hidden)
+            .aspectRatio(1, contentMode: .fit)
             .frame(maxWidth: 300, maxHeight: 600)
         }
         .onAppear(){
             viewModel.fetch()
-            //            let currentDate = TimeInterval(recebeS.data) / 1000
-            //            let date = Date(timeIntervalSince1970: currentDate)
         }
         .frame(height: 360)
+    }
+    private func formatDate(_ date: String) -> String {
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+        dateFormatter.locale = Locale(identifier: "pt_BR")
+        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+        
+        // Converte a string para um objeto Date
+        if let dateObj = dateFormatter.date(from: date) {
+            // Formata o objeto Date para exibir apenas a hora
+            dateFormatter.dateFormat = "HH:mm:ss"
+            return dateFormatter.string(from: dateObj)
+        } else {
+            return "Data inválida"
+        }
     }
 }
 

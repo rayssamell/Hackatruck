@@ -26,22 +26,22 @@ Simultaneamente, um sensor de umidade coleta os dados reais do solo e compara co
 * Está com umidade excessiva
 
 ## 🔧 Tecnologias Utilizadas
-📱 SwiftUI – desenvolvimento da aplicação para interface com o usuário em dispositivos Apple.
-🔁 Postman – utilizado para testar e consumir as APIs envolvidas no projeto.
-☁️ IBM Cloudant – banco de dados NoSQL usado para armazenar informações das plantas e leituras de umidade.
-🔗 Node-RED – responsável por orquestrar e conectar as APIs, sensores e banco de dados de forma visual e interativa.
-🌿 Gemini (IA) – identifica a planta a partir da imagem e retorna dados ideais, como umidade e luminosidade para a espécie reconhecida.
-📡 IoT (Sensor de Umidade) – coleta em tempo real os dados de umidade do solo onde a planta está.
-🔌 Arduino IDE + ESP8266 – plataforma utilizada para programar o microcontrolador ESP8266, responsável pela leitura do sensor e envio dos dados ao sistema.
+- 📱 SwiftUI – desenvolvimento da aplicação para interface com o usuário em dispositivos Apple.
+- 🔁 Postman – utilizado para testar e consumir as APIs envolvidas no projeto.
+- ☁️ IBM Cloudant – banco de dados NoSQL usado para armazenar informações das plantas e leituras de umidade.
+- 🔗 Node-RED – responsável por orquestrar e conectar as APIs, sensores e banco de dados de forma visual e interativa.
+- 🌿 Gemini (IA) – identifica a planta a partir da imagem e retorna dados ideais, como umidade e luminosidade para a espécie reconhecida.
+- 📡 IoT (Sensor de Umidade) – coleta em tempo real os dados de umidade do solo onde a planta está.
+- 🔌 Arduino IDE + ESP8266 – plataforma utilizada para programar o microcontrolador ESP8266, responsável pela leitura do sensor e envio dos dados ao sistema.
 
 ## ⚙️ Como Funciona
 O usuário tira uma foto da planta usando a interface do sistema.
 A imagem é enviada à IA (Gemini), que retorna o nome da planta e suas necessidades ideais de luz e umidade.
 O sistema lê a umidade real do solo via sensor.
 A lógica compara o valor lido com o valor ideal e classifica a situação da planta:
-🌵 Seca – precisa ser regada
-🌿 Ideal – não é necessário regar
-💦 Excesso – umidade acima do ideal
+- 🌵 Seca – precisa ser regada
+- 🌿 Ideal – não é necessário regar
+- 💦 Excesso – umidade acima do ideal
 
 ## 📄 Licença
 Este projeto está licenciado sob a **MIT License** - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
